@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Task Manager</h1>
+            <div class="user-info">
+                <span id="username">Loading...</span>
+                <button id="logout-btn" class="btn btn-outline"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="sidebar">
+                <div class="filters">
+                    <h2>Filters</h2>
+                    <div class="filter-group">
+                        <label for="status-filter">Status:</label>
+                        <select id="status-filter">
+                            <option value="">All</option>
+                            <option value="pending">Pending</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="priority-filter">Priority:</label>
+                        <select id="priority-filter">
+                            <option value="">All</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="tag-filter">Tag:</label>
+                        <select id="tag-filter">
+                            <option value="">All</option>
+                            <!-- Tags will be loaded dynamically -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search tasks...">
+                    </div>
+                    <button id="apply-filters-btn" class="btn btn-primary">Apply Filters</button>
+                </div>
+
+                <div class="tags-section">
+                    <h2>Tags</h2>
+                    <div id="tags-list" class="tags-list">
+                        <!-- Tags will be loaded dynamically -->
+                    </div>
+                    <div class="add-tag-form">
+                        <input type="text" id="new-tag-name" placeholder="New tag name" maxlength="50">
+                        <input type="color" id="new-tag-color" value="#3498db" title="Choose tag color">
+                        <button id="add-tag-btn" class="btn btn-small">Add</button>
+                    </div>
+                    <div class="help-text">Tags help organize your tasks</div>
+                </div>
+
+                <div class="statistics">
+                    <h2>Statistics</h2>
+                    <div id="statistics-content">
+                        <!-- Statistics will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="tasks-header">
+                    <h2>My Tasks</h2>
+                    <button id="new-task-btn" class="btn btn-primary"><i class="fas fa-plus"></i> New Task</button>
+                </div>
+
+                <div id="tasks-container" class="tasks-container">
+                    <!-- Tasks will be loaded dynamically -->
+                    <div class="loading">Loading tasks...</div>
+                </div>
+
+                <div class="pagination">
+                    <button id="prev-page-btn" class="btn btn-outline" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span id="pagination-info">Page 1 of 1</span>
+                    <button id="next-page-btn" class="btn btn-outline" disabled>Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">New Task</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    <div class="form-group">
+                        <label for="task-title">Title:</label>
+                        <input type="text" id="task-title" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Description:</label>
+                        <textarea id="task-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="task-status">Status:</label>
+                            <select id="task-status">
+                                <option value="pending">Pending</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group half">
+                            <label for="task-priority">Priority:</label>
+                            <select id="task-priority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-due-date">Due Date:</label>
+                        <input type="datetime-local" id="task-due-date">
+                        <div class="help-text">Optional: Set a deadline for this task</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tags:</label>
+                        <div id="task-tags" class="task-tags-selection">
+                            <!-- Tags will be loaded dynamically -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancel-task-btn" class="btn btn-outline">Cancel</button>
+                        <button type="submit" id="save-task-btn" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div id="comment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Task Comments</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="task-details">
+                    <h3 id="comment-task-title">Task Title</h3>
+                    <p id="comment-task-description">Task Description</p>
+                </div>
+                <div id="comments-container" class="comments-container">
+                    <!-- Comments will be loaded dynamically -->
+                </div>
+                <div class="add-comment">
+                    <h4>Add Comment</h4>
+                    <form id="comment-form">
+                        <input type="hidden" id="comment-task-id">
+                        <textarea id="comment-content" rows="3" required placeholder="Write your comment here..."></textarea>
+                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/feedback.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/tags.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/comments.js"></script>
+</body>
+</html>

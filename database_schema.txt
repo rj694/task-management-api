@@ -1,0 +1,29 @@
+Task Management API Database Schema
+===================================
+
+User
+----
+id: Integer (Primary Key)
+username: String(80) (Unique, Not Null)
+email: String(120) (Unique, Not Null)
+password_hash: String(256) (Not Null)
+created_at: DateTime
+updated_at: DateTime
+
+Relationships:
+- tasks: One-to-Many relationship with Task
+
+Task
+----
+id: Integer (Primary Key)
+title: String(100) (Not Null)
+description: Text
+status: String(20) (Default: 'pending')
+priority: String(20) (Default: 'medium')
+due_date: DateTime
+created_at: DateTime
+updated_at: DateTime
+user_id: Integer (Foreign Key -> User.id, Not Null)
+
+Relationships:
+- user: Many-to-One relationship with User

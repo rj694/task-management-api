@@ -1,0 +1,17 @@
+[run]
+source = app
+omit = 
+    app/config.py
+    app/cli.py
+    app/utils/db_init.py
+    tests/*
+    venv/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if __name__ == .__main__.:
+    pass
+    raise NotImplementedError
+    return NotImplemented
