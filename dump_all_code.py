@@ -5,7 +5,7 @@ import os
 # -------------------------------------------------------------------
 
 # Absolute path to the directory you want to dump
-ROOT_DIR = r"C:\Users\rdjon\Downloads\task-management-api"
+ROOT_DIR = r"C:\Users\rdjon\task-management-api"
 
 # Output file
 OUTPUT_FILE = os.path.join(ROOT_DIR, "all_code_dump.txt")

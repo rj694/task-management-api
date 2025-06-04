@@ -22,7 +22,9 @@ var/
 
 # Virtual Environment
 venv/
+env/
 ENV/
+.venv/
 
 # Environment Variables
 .env
@@ -54,3 +56,6 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Local dev utility scripts and dumps
+all_code_dump.txt
