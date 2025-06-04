@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Initialize
+    // Initialise
     function init() {
         loadTags();
         setupEventListeners();
     }
     
-    // Initialize the tags module
+    // Initialise the tags module
     init();
     
     // Export functions for use in other modules

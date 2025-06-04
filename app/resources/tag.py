@@ -49,7 +49,7 @@ def create_tag():
         current_user_id = int(current_user_id)
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = tag_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -91,7 +91,7 @@ def update_tag(tag_id):
         return jsonify({"error": "Tag not found"}), 404
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = tag_schema.load(request.json, partial=True)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400

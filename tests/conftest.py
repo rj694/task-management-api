@@ -112,14 +112,14 @@ def admin_auth_tokens(app, admin_user):
 def auth_headers(auth_tokens):
     """Create authentication headers for a regular user."""
     return {
-        "Authorization": f"Bearer {auth_tokens['access_token']}"
+        "Authorisation": f"Bearer {auth_tokens['access_token']}"
     }
 
 @pytest.fixture
 def admin_auth_headers(admin_auth_tokens):
     """Create authentication headers for an admin user."""
     return {
-        "Authorization": f"Bearer {admin_auth_tokens['access_token']}"
+        "Authorisation": f"Bearer {admin_auth_tokens['access_token']}"
     }
 
 @pytest.fixture

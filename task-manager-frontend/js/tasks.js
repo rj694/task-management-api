@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         per_page: 10
     };
     
-    // Initialize
+    // Initialise
     function init() {
         loadTasks();
         loadStatistics();
@@ -529,6 +529,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Initialize the tasks module
+    // Initialise the tasks module
     init();
 });

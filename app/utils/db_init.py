@@ -4,7 +4,7 @@ from app.models.task import Task
 from sqlalchemy import text
 
 def init_db():
-    """Initialize database with tables."""
+    """Initialise database with tables."""
     # Create tables
     db.create_all()
     print("Database tables created.")
@@ -40,7 +40,7 @@ def create_sample_data():
     tasks = [
         Task(
             title="Complete project setup",
-            description="Initialize the project structure and dependencies",
+            description="Initialise the project structure and dependencies",
             status="completed",
             priority="high",
             user_id=user.id
@@ -74,7 +74,7 @@ def create_sample_data():
     admin_tasks = [
         Task(
             title="Review security policies",
-            description="Ensure all endpoints have proper authorization",
+            description="Ensure all endpoints have proper authorisation",
             status="pending",
             priority="high",
             user_id=admin.id

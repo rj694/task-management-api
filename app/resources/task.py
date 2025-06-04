@@ -233,7 +233,7 @@ def bulk_delete_tasks():
     count = db.session.query(Task).filter(
         Task.id.in_(data['task_ids']),
         Task.user_id == current_user_id
-    ).delete(synchronize_session=False)
+    ).delete(synchronise_session=False)
     db.session.commit()
 
     return jsonify({"message": f"{count} tasks deleted successfully"}), 200

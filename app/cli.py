@@ -16,7 +16,7 @@ def register_commands(app):
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
-    """Initialize the database."""
+    """Initialise the database."""
     init_db()
 
 @click.command('drop-db')

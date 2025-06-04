@@ -166,12 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Initialize
+    // Initialise
     function init() {
         setupEventListeners();
     }
     
-    // Initialize the comments module
+    // Initialise the comments module
     init();
     
     // Export functions for use in other modules

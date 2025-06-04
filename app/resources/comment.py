@@ -46,7 +46,7 @@ def create_comment(task_id):
         return jsonify({"error": "Task not found"}), 404
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = comment_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -110,7 +110,7 @@ def update_comment(comment_id):
         return jsonify({"error": "You do not have permission to update this comment"}), 403
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = comment_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400

@@ -42,9 +42,9 @@ def export_tasks():
     tasks = query.all()
     
     if export_format == 'json':
-        # Serialize tasks to JSON
-        serialized_tasks = tasks_schema.dump(tasks)
-        return jsonify(serialized_tasks)
+        # Serialise tasks to JSON
+        serialised_tasks = tasks_schema.dump(tasks)
+        return jsonify(serialised_tasks)
     
     elif export_format == 'csv':
         # Prepare CSV data

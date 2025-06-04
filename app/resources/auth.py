@@ -19,7 +19,7 @@ auth_bp = Blueprint('auth', __name__)
 def register():
     """Register a new user."""
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = user_registration_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -59,7 +59,7 @@ def register():
 def login():
     """Login a user."""
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = user_login_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400

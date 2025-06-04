@@ -11,7 +11,7 @@ def register_error_handlers(app):
     
     @app.errorhandler(401)
     def unauthorized(e):
-        return jsonify({"error": "Unauthorized", "message": str(e)}), 401
+        return jsonify({"error": "Unauthorised", "message": str(e)}), 401
     
     @app.errorhandler(403)
     def forbidden(e):

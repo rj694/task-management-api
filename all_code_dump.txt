@@ -1,7 +1,7 @@
-### File: C:\Users\rdjon\Downloads\task-management-api\all_code_dump.txt
+### File: C:\Users\rdjon\task-management-api\all_code_dump.txt
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\config.py
+### File: C:\Users\rdjon\task-management-api\config.py
 """Application configuration."""
 import os
 from dotenv import load_dotenv
@@ -13,7 +13,7 @@ load_dotenv()
 FLASK_APP = os.getenv('FLASK_APP', 'run.py')
 FLASK_ENV = os.getenv('FLASK_ENV', 'development')
 
-### File: C:\Users\rdjon\Downloads\task-management-api\database_schema.txt
+### File: C:\Users\rdjon\task-management-api\database_schema.txt
 Task Management API Database Schema
 ===================================
 
@@ -44,7 +44,7 @@ user_id: Integer (Foreign Key -> User.id, Not Null)
 Relationships:
 - user: Many-to-One relationship with User
 
-### File: C:\Users\rdjon\Downloads\task-management-api\dump_all_code.py
+### File: C:\Users\rdjon\task-management-api\dump_all_code.py
 import os
 
 # -------------------------------------------------------------------
@@ -52,7 +52,7 @@ import os
 # -------------------------------------------------------------------
 
 # Absolute path to the directory you want to dump
-ROOT_DIR = r"C:\Users\rdjon\Downloads\task-management-api"
+ROOT_DIR = r"C:\Users\rdjon\task-management-api"
 
 # Output file
 OUTPUT_FILE = os.path.join(ROOT_DIR, "all_code_dump.txt")
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     dump_code(ROOT_DIR, OUTPUT_FILE)
     print(f"✅ All code dumped to {OUTPUT_FILE!r}")
 
-### File: C:\Users\rdjon\Downloads\task-management-api\jwt_debug.py
+### File: C:\Users\rdjon\task-management-api\jwt_debug.py
 from app import create_app
 from flask_jwt_extended import create_access_token, decode_token, get_jwt_identity
 from flask import current_app
@@ -177,7 +177,7 @@ def debug_jwt():
 if __name__ == "__main__":
     debug_jwt()
 
-### File: C:\Users\rdjon\Downloads\task-management-api\pytest.ini
+### File: C:\Users\rdjon\task-management-api\pytest.ini
 [pytest]
 testpaths = tests
 python_files = test_*.py
@@ -188,7 +188,7 @@ filterwarnings =
     ignore::UserWarning
 addopts = -v
 
-### File: C:\Users\rdjon\Downloads\task-management-api\README.md
+### File: C:\Users\rdjon\task-management-api\README.md
 # Task Management API
 
 A RESTful API for managing tasks, built with Flask.
@@ -246,7 +246,7 @@ pytest
 
 MIT
 
-### File: C:\Users\rdjon\Downloads\task-management-api\requirements.txt
+### File: C:\Users\rdjon\task-management-api\requirements.txt
 absl-py==1.4.0
 aiohttp==3.9.0
 aiosignal==1.3.1
@@ -472,7 +472,7 @@ yacs==0.1.8
 yarl==1.9.3
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\run.py
+### File: C:\Users\rdjon\task-management-api\run.py
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -497,7 +497,7 @@ def make_shell_context():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\run_tests.py
+### File: C:\Users\rdjon\task-management-api\run_tests.py
 import subprocess
 import os
 import sys
@@ -530,7 +530,7 @@ def run_tests():
 if __name__ == "__main__":
     sys.exit(run_tests())
 
-### File: C:\Users\rdjon\Downloads\task-management-api\test_advanced_features.py
+### File: C:\Users\rdjon\task-management-api\test_advanced_features.py
 import requests
 import json
 from pprint import pprint
@@ -542,7 +542,7 @@ def test_tag_operations(auth_token):
     print("=== Testing Tag Operations ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -596,7 +596,7 @@ def test_task_with_tags(auth_token, tag_id):
     print("\n=== Testing Tasks with Tags ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -649,7 +649,7 @@ def test_task_comments(auth_token, task_id):
     print("\n=== Testing Task Comments ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -701,7 +701,7 @@ def test_task_export(auth_token):
     print("\n=== Testing Task Export ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}"
+        "Authorisation": f"Bearer {auth_token}"
     }
     
     # Export tasks as JSON
@@ -734,7 +734,7 @@ def test_rate_limiting(auth_token):
     print("\n=== Testing Rate Limiting ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -797,7 +797,7 @@ def run_tests():
 if __name__ == "__main__":
     run_tests()
 
-### File: C:\Users\rdjon\Downloads\task-management-api\test_api.py
+### File: C:\Users\rdjon\task-management-api\test_api.py
 import requests
 import json
 from pprint import pprint
@@ -844,7 +844,7 @@ def test_create_task(access_token):
     
     # Make sure the header format is exactly 'Bearer <token>' with a space
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -859,7 +859,7 @@ def test_create_task(access_token):
     
     print(f"Status code: {response.status_code}")
     if response.status_code == 401:
-        print("DEBUG: Authorization header sent:", headers["Authorization"])
+        print("DEBUG: Authorisation header sent:", headers["Authorisation"])
     pprint(response.json())
     
     return response.json()
@@ -869,7 +869,7 @@ def test_get_tasks(access_token):
     print("\nTesting get all tasks...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -885,7 +885,7 @@ def test_get_task(access_token, task_id):
     print(f"\nTesting get task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -901,7 +901,7 @@ def test_update_task(access_token, task_id):
     print(f"\nTesting update task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -922,7 +922,7 @@ def test_task_statistics(access_token):
     print("\nTesting task statistics...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -938,7 +938,7 @@ def test_delete_task(access_token, task_id):
     print(f"\nTesting delete task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -995,7 +995,7 @@ def run_tests():
 if __name__ == "__main__":
     run_tests()
 
-### File: C:\Users\rdjon\Downloads\task-management-api\test_auth_features.py
+### File: C:\Users\rdjon\task-management-api\test_auth_features.py
 import requests
 import json
 from pprint import pprint
@@ -1035,7 +1035,7 @@ def test_register_login_logout():
     # Get user profile
     print("\n2. Getting user profile...")
     headers = {
-        "Authorization": f"Bearer {access_token}"
+        "Authorisation": f"Bearer {access_token}"
     }
     
     profile_response = requests.get(f"{BASE_URL}/auth/me", headers=headers)
@@ -1057,7 +1057,7 @@ def test_register_login_logout():
     # Try to refresh the token
     print("\n5. Trying to refresh the token...")
     refresh_headers = {
-        "Authorization": f"Bearer {refresh_token}"
+        "Authorisation": f"Bearer {refresh_token}"
     }
     refresh_response = requests.post(f"{BASE_URL}/auth/refresh", headers=refresh_headers)
     print(f"Status code: {refresh_response.status_code}")
@@ -1082,7 +1082,7 @@ def test_admin_endpoints(admin_email, admin_password):
     
     admin_token = login_response.json().get('access_token')
     admin_headers = {
-        "Authorization": f"Bearer {admin_token}"
+        "Authorisation": f"Bearer {admin_token}"
     }
     
     # Get all users (admin only)
@@ -1129,7 +1129,7 @@ def run_tests():
 if __name__ == "__main__":
     run_tests()
 
-### File: C:\Users\rdjon\Downloads\task-management-api\verify_models.py
+### File: C:\Users\rdjon\task-management-api\verify_models.py
 from app import create_app, db
 from app.models.user import User
 from app.models.task import Task
@@ -1215,7 +1215,7 @@ def verify_models():
 if __name__ == "__main__":
     verify_models()
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\cli.py
+### File: C:\Users\rdjon\task-management-api\app\cli.py
 import click
 from flask.cli import with_appcontext
 from app import db
@@ -1234,7 +1234,7 @@ def register_commands(app):
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
-    """Initialize the database."""
+    """Initialise the database."""
     init_db()
 
 @click.command('drop-db')
@@ -1296,7 +1296,7 @@ def cleanup_tokens_command():
     else:
         click.echo("Error cleaning up expired tokens.")
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\config.py
+### File: C:\Users\rdjon\task-management-api\app\config.py
 import os
 from datetime import timedelta
 
@@ -1367,7 +1367,7 @@ class ProductionConfig(Config):
     MAIL_DEBUG = False
     MAIL_SUPPRESS_SEND = False
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\__init__.py
+### File: C:\Users\rdjon\task-management-api\app\__init__.py
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -1375,149 +1375,100 @@ from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# --------------------------------------------------------------------- #
+# Initialisation
+# --------------------------------------------------------------------- #
 load_dotenv()
 
-# Initialize extensions
-db = SQLAlchemy()
-migrate = Migrate()
-jwt = JWTManager()
-cors = CORS()
-limiter = Limiter(
-    key_func=get_remote_address,
-    default_limits=["60 per minute"],
-)
+db       = SQLAlchemy()
+migrate  = Migrate()
+jwt      = JWTManager()
+cors     = CORS()
+limiter  = Limiter(key_func=get_remote_address,
+                   default_limits=["60 per minute"])
 
-# Import mail after other extensions but before create_app
-from app.utils.email import mail
+# Mail needs the app later
+from app.utils.email import mail   # isort: skip
 
-def create_app(config_object='app.config.DevelopmentConfig'):
-    """Application factory pattern."""
+def create_app(config_object="app.config.DevelopmentConfig"):
+    """Flask application-factory."""
     app = Flask(__name__)
-    
-    # Load configuration
     app.config.from_object(config_object)
-    
-    # Initialize extensions with app
+
+    # Extensions
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
     cors.init_app(app)
     limiter.init_app(app)
-    mail.init_app(app)  # Initialize Flask-Mail
-    
-    # Import models to ensure they're registered with SQLAlchemy
-    from app.models.user import User
-    from app.models.task import Task
-    from app.models.token_blacklist import TokenBlacklist
-    from app.models.tag import Tag
-    from app.models.comment import Comment
-    from app.models.password_reset import PasswordResetToken
-    from app.models.activity_log import ActivityLog
-    
-    # Register blueprints
-    from app.resources.auth import auth_bp
-    from app.resources.task import task_bp
-    from app.resources.admin import admin_bp
-    from app.resources.tag import tag_bp
-    from app.resources.comment import comment_bp
-    from app.resources.export import export_bp
-    from app.utils.api_docs import api_docs_bp
-    from app.resources.debug import debug_bp
-    
-    app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
-    app.register_blueprint(task_bp, url_prefix='/api/v1/tasks')
-    app.register_blueprint(admin_bp, url_prefix='/api/v1/admin')
-    app.register_blueprint(tag_bp, url_prefix='/api/v1/tags')
-    app.register_blueprint(comment_bp, url_prefix='/api/v1')
-    app.register_blueprint(export_bp, url_prefix='/api/v1')
-    app.register_blueprint(api_docs_bp, url_prefix='/api/v1/docs')
-    app.register_blueprint(debug_bp, url_prefix='/api/v1/debug')
-    
+    mail.init_app(app)
+
+    # Import models so Alembic sees them
+    from app.models import (  # noqa: F401
+        user, task, tag, comment,
+        token_blacklist, password_reset, activity_log
+    )
+
+    # ---------------------------------------- #
     # Register CLI commands
+    # ---------------------------------------- #
     from app.cli import register_commands
     register_commands(app)
-    
-    # Register error handlers
+
+    # ---------------------------------------- #
+    # Blueprints
+    # ---------------------------------------- #
+    from app.resources.auth     import auth_bp
+    from app.resources.task     import task_bp
+    from app.resources.tag      import tag_bp
+    from app.resources.comment  import comment_bp
+    from app.resources.export   import export_bp
+    from app.resources.admin    import admin_bp
+    from app.resources.activity import activity_bp   # <-- NEW
+    from app.utils.api_docs     import api_docs_bp
+    from app.resources.debug    import debug_bp
+
+    app.register_blueprint(auth_bp,     url_prefix="/api/v1/auth")
+    app.register_blueprint(task_bp,     url_prefix="/api/v1/tasks")
+    app.register_blueprint(tag_bp,      url_prefix="/api/v1/tags")
+    app.register_blueprint(comment_bp,  url_prefix="/api/v1")
+    app.register_blueprint(export_bp,   url_prefix="/api/v1")
+    app.register_blueprint(admin_bp,    url_prefix="/api/v1/admin")
+    app.register_blueprint(activity_bp, url_prefix="/api/v1")  # <-- NEW
+    app.register_blueprint(api_docs_bp, url_prefix="/api/v1/docs")
+    app.register_blueprint(debug_bp,    url_prefix="/api/v1/debug")
+
+    # ---------------------------------------- #
+    # JWT blacklist callback
+    # ---------------------------------------- #
+    from app.models.token_blacklist import TokenBlacklist
+
+    @jwt.token_in_blocklist_loader
+    def _is_token_revoked(jwt_header, jwt_payload):
+        return TokenBlacklist.is_token_revoked(jwt_payload)
+
+    # Error handlers & 429 handler already present elsewhere
     from app.utils.errors import register_error_handlers
     register_error_handlers(app)
-    
-    # JWT token blacklist loader
-    from app.models.token_blacklist import TokenBlacklist
-    
-    @jwt.token_in_blocklist_loader
-    def check_if_token_revoked(jwt_header, jwt_payload):
-        """Check if token is revoked."""
-        return TokenBlacklist.is_token_revoked(jwt_payload)
-    
-    # JWT error handlers
-    @jwt.expired_token_loader
-    def expired_token_callback(jwt_header, jwt_payload):
-        return jsonify({
-            'error': 'Token has expired',
-            'message': 'Please log in again'
-        }), 401
-    
-    @jwt.invalid_token_loader
-    def invalid_token_callback(error):
-        return jsonify({
-            'error': 'Invalid token',
-            'message': f'Signature verification failed: {error}'
-        }), 401
-    
-    @jwt.unauthorized_loader
-    def missing_token_callback(error):
-        return jsonify({
-            'error': 'Authorization required',
-            'message': f'Token is missing: {error}'
-        }), 401
-    
-    @jwt.revoked_token_loader
-    def revoked_token_callback(jwt_header, jwt_payload):
-        return jsonify({
-            'error': 'Token has been revoked',
-            'message': 'Please log in again'
-        }), 401
-        
-    # Add this new handler for wrong token type
-    @jwt.needs_fresh_token_loader
-    def token_not_fresh_callback(jwt_header, jwt_payload):
-        return jsonify({
-            'error': 'Fresh token required',
-            'message': 'Fresh token required'
-        }), 401
-        
-    # This is specifically for the refresh vs access token issue
-    # We'll patch the auth.py to handle this correctly
-    
-    # Rate limiter error handler
-    @app.errorhandler(429)
-    def ratelimit_handler(e):
-        return jsonify({
-            "error": "Rate limit exceeded",
-            "message": "Too many requests. Please try again later."
-        }), 429
-    
-    # Shell context for flask cli
+
+    # Shell context
     @app.shell_context_processor
-    def ctx():
-        return {"app": app, "db": db, "TokenBlacklist": TokenBlacklist}
-    
-    # Root route
-    @app.route('/')
+    def _ctx():
+        return dict(app=app, db=db)  # pragma: no cover
+
+    # Root ping
+    @app.route("/")
     def index():
         return jsonify({
             "message": "Welcome to the Task Management API",
-            "version": "1.0.0",
-            "documentation": "/api/v1/docs"
+            "version": "1.0.0"
         }), 200
-    
+
     return app
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\activity_log.py
+### File: C:\Users\rdjon\task-management-api\app\models\activity_log.py
 from app import db
 from datetime import datetime
 from enum import Enum
@@ -1634,7 +1585,7 @@ class ActivityLog(db.Model):
     def __repr__(self):
         return f'<ActivityLog {self.activity_type} by user {self.user_id}>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\comment.py
+### File: C:\Users\rdjon\task-management-api\app\models\comment.py
 from app import db
 from datetime import datetime
 
@@ -1670,7 +1621,7 @@ class Comment(db.Model):
     def __repr__(self):
         return f'<Comment {self.id}>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\password_reset.py
+### File: C:\Users\rdjon\task-management-api\app\models\password_reset.py
 from app import db
 from datetime import datetime, timedelta
 import secrets
@@ -1716,7 +1667,7 @@ class PasswordResetToken(db.Model):
     def __repr__(self):
         return f'<PasswordResetToken {self.token[:8]}...>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\tag.py
+### File: C:\Users\rdjon\task-management-api\app\models\tag.py
 from app import db
 
 # Many-to-many relationship table between tasks and tags
@@ -1735,8 +1686,12 @@ class Tag(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
     
     # Relationships
-    tasks = db.relationship('Task', secondary=task_tags, lazy='dynamic',
-                           backref=db.backref('tags', lazy='dynamic'))
+    tasks = db.relationship(
+    'Task',
+    secondary=task_tags,
+    lazy='selectin',
+    backref=db.backref('tags', lazy='selectin')
+    )
     
     def __init__(self, name, user_id, color="#3498db"):
         self.name = name
@@ -1755,7 +1710,7 @@ class Tag(db.Model):
     def __repr__(self):
         return f'<Tag {self.name}>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\task.py
+### File: C:\Users\rdjon\task-management-api\app\models\task.py
 from app import db
 from datetime import datetime
 
@@ -1806,7 +1761,7 @@ class Task(db.Model):
     def __repr__(self):
         return f'<Task {self.title}>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\token_blacklist.py
+### File: C:\Users\rdjon\task-management-api\app\models\token_blacklist.py
 from app import db
 from datetime import datetime
 
@@ -1830,7 +1785,7 @@ class TokenBlacklist(db.Model):
         jti = jwt_payload['jti']
         return cls.query.filter_by(jti=jti).first() is not None
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\user.py
+### File: C:\Users\rdjon\task-management-api\app\models\user.py
 from app import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -1886,7 +1841,7 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.username}>'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\models\__init__.py
+### File: C:\Users\rdjon\task-management-api\app\models\__init__.py
 from app.models.user import User
 from app.models.task import Task
 from app.models.token_blacklist import TokenBlacklist
@@ -1895,7 +1850,47 @@ from app.models.comment import Comment
 from app.models.password_reset import PasswordResetToken
 from app.models.activity_log import ActivityLog
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\admin.py
+### File: C:\Users\rdjon\task-management-api\app\resources\activity.py
+"""
+User activity feed endpoints.
+
+Added 2025-06-04
+"""
+from flask import Blueprint, jsonify, request
+from flask_jwt_extended import jwt_required, get_jwt_identity
+from app.models.activity_log import ActivityLog
+
+activity_bp = Blueprint("activity", __name__)
+
+@activity_bp.route("/activities", methods=["GET"])
+@jwt_required()
+def get_my_activities():
+    """
+    Return the authenticated user’s recent activity log entries.
+
+    Query-string parameters (all optional):
+        limit   – max rows to return (default 50, max 100)
+        offset  – starting row (default 0)
+    """
+    user_id = get_jwt_identity()
+    if isinstance(user_id, str):
+        user_id = int(user_id)
+
+    try:
+        limit = min(int(request.args.get("limit", 50)), 100)
+        offset = int(request.args.get("offset", 0))
+    except ValueError:
+        return jsonify({"error": "limit and offset must be integers"}), 400
+
+    logs = ActivityLog.get_user_activities(
+        user_id=user_id,
+        limit=limit,
+        offset=offset
+    )
+
+    return jsonify([entry.to_dict() for entry in logs]), 200
+
+### File: C:\Users\rdjon\task-management-api\app\resources\admin.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import get_jwt_identity
 from app.utils.auth import admin_required
@@ -2037,7 +2032,7 @@ def get_admin_statistics():
         }
     }), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\auth.py
+### File: C:\Users\rdjon\task-management-api\app\resources\auth.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import (
     create_access_token, create_refresh_token, jwt_required, 
@@ -2059,7 +2054,7 @@ auth_bp = Blueprint('auth', __name__)
 def register():
     """Register a new user."""
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = user_registration_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2099,7 +2094,7 @@ def register():
 def login():
     """Login a user."""
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = user_login_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2358,7 +2353,7 @@ def verify_reset_token():
             "message": "Invalid or expired token"
         }), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\comment.py
+### File: C:\Users\rdjon\task-management-api\app\resources\comment.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from marshmallow import ValidationError
@@ -2407,7 +2402,7 @@ def create_comment(task_id):
         return jsonify({"error": "Task not found"}), 404
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = comment_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2471,7 +2466,7 @@ def update_comment(comment_id):
         return jsonify({"error": "You do not have permission to update this comment"}), 403
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = comment_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2516,7 +2511,7 @@ def delete_comment(comment_id):
         "message": "Comment deleted successfully"
     }), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\debug.py
+### File: C:\Users\rdjon\task-management-api\app\resources\debug.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity, verify_jwt_in_request, get_jwt
 import jwt
@@ -2591,7 +2586,7 @@ def protected():
         "user_id": current_user_id
     }), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\export.py
+### File: C:\Users\rdjon\task-management-api\app\resources\export.py
 from flask import Blueprint, request, jsonify, Response
 from flask_jwt_extended import jwt_required, get_jwt_identity
 import json
@@ -2636,9 +2631,9 @@ def export_tasks():
     tasks = query.all()
     
     if export_format == 'json':
-        # Serialize tasks to JSON
-        serialized_tasks = tasks_schema.dump(tasks)
-        return jsonify(serialized_tasks)
+        # Serialise tasks to JSON
+        serialised_tasks = tasks_schema.dump(tasks)
+        return jsonify(serialised_tasks)
     
     elif export_format == 'csv':
         # Prepare CSV data
@@ -2677,7 +2672,7 @@ def export_tasks():
             "supported_formats": ["json", "csv"]
         }), 400
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\tag.py
+### File: C:\Users\rdjon\task-management-api\app\resources\tag.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from marshmallow import ValidationError
@@ -2729,7 +2724,7 @@ def create_tag():
         current_user_id = int(current_user_id)
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = tag_schema.load(request.json)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2771,7 +2766,7 @@ def update_tag(tag_id):
         return jsonify({"error": "Tag not found"}), 404
     
     try:
-        # Validate and deserialize input
+        # Validate and deserialise input
         data = tag_schema.load(request.json, partial=True)
     except ValidationError as err:
         return jsonify({"error": "Validation error", "messages": err.messages}), 400
@@ -2818,87 +2813,78 @@ def delete_tag(tag_id):
         "message": "Tag deleted successfully"
     }), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\task.py
+### File: C:\Users\rdjon\task-management-api\app\resources\task.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from marshmallow import ValidationError
-from datetime import datetime, timedelta
-from sqlalchemy import desc, asc
-from sqlalchemy.orm import joinedload
+from datetime import datetime
+from sqlalchemy import desc, asc, or_
+from sqlalchemy.orm import selectinload, joinedload
+
 from app import db
 from app.models.task import Task
 from app.models.tag import Tag
-from app.schemas import task_schema, tasks_schema, task_query_schema, task_bulk_delete_schema, task_bulk_update_schema
+from app.models.activity_log import ActivityType
+from app.schemas import (
+    task_schema, tasks_schema, task_query_schema,
+    task_bulk_delete_schema, task_bulk_update_schema
+)
+
+# **NEW IMPORTS FOR LOGGING**
+from app.utils.activity_logger import (
+    log_activity,
+    get_task_id_from_response
+)
 
 task_bp = Blueprint('task', __name__)
 
+# ---------------------------------------------------------------------- #
+# Query helpers – unchanged
+# ---------------------------------------------------------------------- #
 @task_bp.route('', methods=['GET'])
 @jwt_required()
 def get_tasks():
     """Get all tasks for the current user."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
-    # Get and validate query parameters
-    query_params = {}
-    for key, value in request.args.items():
-        if value:  # Only include non-empty parameters
-            query_params[key] = value
-    
+
+    # Validate query parameters
+    raw = {k: v for k, v in request.args.items() if v}
     try:
-        # Validate query parameters
-        query_data = task_query_schema.load(query_params)
+        q = task_query_schema.load(raw)
     except ValidationError as err:
-        return jsonify({"error": "Invalid query parameters", "messages": err.messages}), 400
-    
-    # Base query with eager loading of tags
-    query = Task.query.options(joinedload(Task.tags)).filter_by(user_id=current_user_id)
-    
-    # Apply filters if provided
-    if 'status' in query_data:
-        query = query.filter_by(status=query_data['status'])
-    if 'priority' in query_data:
-        query = query.filter_by(priority=query_data['priority'])
-    if 'search' in query_data:
-        search_term = f"%{query_data['search']}%"
-        query = query.filter(
-            db.or_(
-                Task.title.ilike(search_term),
-                Task.description.ilike(search_term)
-            )
-        )
-    if 'tag' in query_data:
-        query = query.join(Task.tags).filter(Tag.id == query_data['tag'])
-    if 'due_before' in query_data:
-        query = query.filter(Task.due_date <= query_data['due_before'])
-    if 'due_after' in query_data:
-        query = query.filter(Task.due_date >= query_data['due_after'])
-    
-    # Apply sorting
-    sort_by = query_data.get('sort_by', 'created_at')
-    sort_order = query_data.get('sort_order', 'desc')
-    
-    if sort_order == 'desc':
-        query = query.order_by(desc(getattr(Task, sort_by)))
-    else:
-        query = query.order_by(asc(getattr(Task, sort_by)))
-    
-    # Apply pagination
-    page = query_data.get('page', 1)
-    per_page = query_data.get('per_page', 10)
-    
-    # Handle pagination for SQLAlchemy 2.0
-    total = query.count()
-    items = query.limit(per_page).offset((page - 1) * per_page).all()
-    total_pages = (total + per_page - 1) // per_page  # Ceiling division
-    
+        return jsonify({"error": "Invalid query parameters",
+                        "messages": err.messages}), 400
+
+    query = Task.query.options(selectinload(Task.tags)) \
+                       .filter_by(user_id=current_user_id)
+
+    if 'status' in q:    query = query.filter_by(status=q['status'])
+    if 'priority' in q:  query = query.filter_by(priority=q['priority'])
+    if 'search' in q:
+        term = f"%{q['search']}%"
+        query = query.filter(or_(Task.title.ilike(term),
+                                 Task.description.ilike(term)))
+    if 'tag' in q:
+        query = query.join(Task.tags).filter(Tag.id == q['tag'])
+    if 'due_before' in q: query = query.filter(Task.due_date <= q['due_before'])
+    if 'due_after' in q:  query = query.filter(Task.due_date >= q['due_after'])
+
+    sort_attr = getattr(Task, q.get('sort_by', 'created_at'))
+    query = query.order_by(desc(sort_attr) if q.get('sort_order', 'desc') == 'desc'
+                           else asc(sort_attr))
+
+    page      = q.get('page', 1)
+    per_page  = q.get('per_page', 10)
+    total     = query.count()
+    items     = query.limit(per_page).offset((page-1)*per_page).all()
+    pages     = (total + per_page - 1) // per_page
+
     return jsonify({
         "tasks": tasks_schema.dump(items),
         "total": total,
-        "pages": total_pages,
+        "pages": pages,
         "page": page,
         "per_page": per_page
     }), 200
@@ -2908,39 +2894,42 @@ def get_tasks():
 def get_task(task_id):
     """Get a specific task."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
-    # Eager load tags and comments
-    task = Task.query.options(
-        joinedload(Task.tags),
-        joinedload(Task.comments)
-    ).filter_by(id=task_id, user_id=current_user_id).first()
-    
+
+    task = (
+        Task.query
+            .options(joinedload(Task.tags), joinedload(Task.comments))
+            .filter_by(id=task_id, user_id=current_user_id)
+            .first()
+    )
     if not task:
         return jsonify({"error": "Task not found"}), 404
-    
+
     return jsonify(task_schema.dump(task)), 200
 
+# ---------------------------------------------------------------------- #
+# Create / update / delete – now with @log_activity
+# ---------------------------------------------------------------------- #
 @task_bp.route('', methods=['POST'])
 @jwt_required()
+@log_activity(               # <-- NEW
+    activity_type=ActivityType.TASK_CREATE,
+    entity_type="task",
+    get_entity_id=get_task_id_from_response
+)
 def create_task():
     """Create a new task."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
+
     try:
-        # Validate and deserialize input
         data = task_schema.load(request.json)
     except ValidationError as err:
-        return jsonify({"error": "Validation error", "messages": err.messages}), 400
-    
-    # Create new task
+        return jsonify({"error": "Validation error",
+                        "messages": err.messages}), 400
+
     task = Task(
         title=data['title'],
         user_id=current_user_id,
@@ -2949,332 +2938,161 @@ def create_task():
         priority=data.get('priority', 'medium'),
         due_date=data.get('due_date')
     )
-    
-    # Add task to database
     db.session.add(task)
     db.session.commit()
-    
-    # Add tags if provided
-    if 'tag_ids' in data and data['tag_ids']:
+
+    # Handle tags if supplied
+    if data.get('tag_ids'):
         tags = Tag.query.filter(
             Tag.id.in_(data['tag_ids']),
             Tag.user_id == current_user_id
         ).all()
-        
         if len(tags) != len(data['tag_ids']):
             return jsonify({"error": "One or more tags not found"}), 404
-        
-        for tag in tags:
-            task.tags.append(tag)
-        
+        task.tags.extend(tags)
         db.session.commit()
-    
-    # Reload task with relationships
+
     task = Task.query.options(joinedload(Task.tags)).get(task.id)
-    
     return jsonify({
         "message": "Task created successfully",
         "task": task_schema.dump(task)
     }), 201
 
+
 @task_bp.route('/<int:task_id>', methods=['PUT'])
 @jwt_required()
+@log_activity(
+    activity_type=ActivityType.TASK_UPDATE,
+    entity_type="task",
+    get_entity_id="task_id"
+)
 def update_task(task_id):
     """Update a specific task."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
+
     task = Task.query.filter_by(id=task_id, user_id=current_user_id).first()
-    
     if not task:
         return jsonify({"error": "Task not found"}), 404
-    
+
     try:
-        # Validate and deserialize input
         data = task_schema.load(request.json, partial=True)
     except ValidationError as err:
-        return jsonify({"error": "Validation error", "messages": err.messages}), 400
-    
-    # Update task fields
-    if 'title' in data:
-        task.title = data['title']
-    if 'description' in data:
-        task.description = data['description']
-    if 'status' in data:
-        task.status = data['status']
-    if 'priority' in data:
-        task.priority = data['priority']
-    if 'due_date' in data:
-        task.due_date = data['due_date']
-    
-    # Update tags if provided
+        return jsonify({"error": "Validation error",
+                        "messages": err.messages}), 400
+
+    for field in ('title', 'description', 'status',
+                  'priority', 'due_date'):
+        if field in data:
+            setattr(task, field, data[field])
+
+    # Tags
     if 'tag_ids' in data:
-        # First remove all existing tags
         task.tags = []
-        
         if data['tag_ids']:
             tags = Tag.query.filter(
                 Tag.id.in_(data['tag_ids']),
                 Tag.user_id == current_user_id
             ).all()
-            
             if len(tags) != len(data['tag_ids']):
                 return jsonify({"error": "One or more tags not found"}), 404
-            
-            for tag in tags:
-                task.tags.append(tag)
-    
-    # Update task in database
+            task.tags.extend(tags)
+
     db.session.commit()
-    
-    # Reload task with relationships
     task = Task.query.options(joinedload(Task.tags)).get(task.id)
-    
     return jsonify({
         "message": "Task updated successfully",
         "task": task_schema.dump(task)
     }), 200
 
+
 @task_bp.route('/<int:task_id>', methods=['DELETE'])
 @jwt_required()
+@log_activity(
+    activity_type=ActivityType.TASK_DELETE,
+    entity_type="task",
+    get_entity_id="task_id"
+)
 def delete_task(task_id):
     """Delete a specific task."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
+
     task = Task.query.filter_by(id=task_id, user_id=current_user_id).first()
-    
     if not task:
         return jsonify({"error": "Task not found"}), 404
-    
-    # Delete task from database
+
     db.session.delete(task)
     db.session.commit()
-    
-    return jsonify({
-        "message": "Task deleted successfully"
-    }), 200
+    return jsonify({"message": "Task deleted successfully"}), 200
 
+# ---------------------------------------------------------------------- #
+# Bulk operations – activity logged once per call
+# ---------------------------------------------------------------------- #
 @task_bp.route('/bulk/delete', methods=['POST'])
 @jwt_required()
+@log_activity(ActivityType.TASK_BULK_DELETE, entity_type="task")
 def bulk_delete_tasks():
     """Delete multiple tasks."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
+
     try:
-        # Validate and deserialize input
         data = task_bulk_delete_schema.load(request.json)
     except ValidationError as err:
-        return jsonify({"error": "Validation error", "messages": err.messages}), 400
-    
-    task_ids = data['task_ids']
-    
-    # Delete tasks
-    result = db.session.query(Task).filter(
-        Task.id.in_(task_ids),
+        return jsonify({"error": "Validation error",
+                        "messages": err.messages}), 400
+
+    count = db.session.query(Task).filter(
+        Task.id.in_(data['task_ids']),
         Task.user_id == current_user_id
-    ).delete(synchronize_session=False)
-    
+    ).delete(synchronise_session=False)
     db.session.commit()
-    
-    return jsonify({
-        "message": f"{result} tasks deleted successfully"
-    }), 200
+
+    return jsonify({"message": f"{count} tasks deleted successfully"}), 200
+
 
 @task_bp.route('/bulk/update', methods=['PUT'])
 @jwt_required()
+@log_activity(ActivityType.TASK_BULK_UPDATE, entity_type="task")
 def bulk_update_tasks():
     """Update multiple tasks."""
     current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
     if isinstance(current_user_id, str):
         current_user_id = int(current_user_id)
-    
+
     try:
-        # Validate and deserialize input
         data = task_bulk_update_schema.load(request.json)
     except ValidationError as err:
-        return jsonify({"error": "Validation error", "messages": err.messages}), 400
-    
-    task_ids = data['task_ids']
-    updates = data['updates']
-    
-    # Validate update fields
+        return jsonify({"error": "Validation error",
+                        "messages": err.messages}), 400
+
     valid_fields = {'status', 'priority', 'due_date'}
-    for field in updates.keys():
-        if field not in valid_fields:
-            return jsonify({"error": f"Invalid field: {field}"}), 400
-    
-    # Update tasks
+    if not set(data['updates']).issubset(valid_fields):
+        return jsonify({"error": "Only status, priority or due_date "
+                                 "can be mass-updated"}), 400
+
     tasks = Task.query.filter(
-        Task.id.in_(task_ids),
+        Task.id.in_(data['task_ids']),
         Task.user_id == current_user_id
     ).all()
-    
+
     for task in tasks:
-        for field, value in updates.items():
+        for field, value in data['updates'].items():
             setattr(task, field, value)
-    
+
     db.session.commit()
-    
     return jsonify({
         "message": f"{len(tasks)} tasks updated successfully"
     }), 200
 
-@task_bp.route('/<int:task_id>/tags', methods=['POST'])
-@jwt_required()
-def add_tag_to_task(task_id):
-    """Add a tag to a task."""
-    current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
-    if isinstance(current_user_id, str):
-        current_user_id = int(current_user_id)
-    
-    task = Task.query.filter_by(id=task_id, user_id=current_user_id).first()
-    
-    if not task:
-        return jsonify({"error": "Task not found"}), 404
-    
-    try:
-        # Get tag ID from request
-        tag_id = request.json.get('tag_id')
-        if not tag_id:
-            return jsonify({"error": "Tag ID is required"}), 400
-    except Exception:
-        return jsonify({"error": "Invalid request format"}), 400
-    
-    # Get tag
-    tag = Tag.query.filter_by(id=tag_id, user_id=current_user_id).first()
-    
-    if not tag:
-        return jsonify({"error": "Tag not found"}), 404
-    
-    # Check if task already has this tag
-    if tag in task.tags:
-        return jsonify({"error": "Task already has this tag"}), 409
-    
-    # Add tag to task
-    task.tags.append(tag)
-    db.session.commit()
-    
-    # Reload task with relationships
-    task = Task.query.options(joinedload(Task.tags)).get(task.id)
-    
-    return jsonify({
-        "message": "Tag added to task successfully",
-        "task": task_schema.dump(task)
-    }), 200
-
-@task_bp.route('/<int:task_id>/tags/<int:tag_id>', methods=['DELETE'])
-@jwt_required()
-def remove_tag_from_task(task_id, tag_id):
-    """Remove a tag from a task."""
-    current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
-    if isinstance(current_user_id, str):
-        current_user_id = int(current_user_id)
-    
-    task = Task.query.filter_by(id=task_id, user_id=current_user_id).first()
-    
-    if not task:
-        return jsonify({"error": "Task not found"}), 404
-    
-    tag = Tag.query.filter_by(id=tag_id, user_id=current_user_id).first()
-    
-    if not tag:
-        return jsonify({"error": "Tag not found"}), 404
-    
-    # Check if task has this tag
-    if tag not in task.tags:
-        return jsonify({"error": "Task does not have this tag"}), 404
-    
-    # Remove tag from task
-    task.tags.remove(tag)
-    db.session.commit()
-    
-    # Reload task with relationships
-    task = Task.query.options(joinedload(Task.tags)).get(task.id)
-    
-    return jsonify({
-        "message": "Tag removed from task successfully",
-        "task": task_schema.dump(task)
-    }), 200
-
-@task_bp.route('/statistics', methods=['GET'])
-@jwt_required()
-def get_task_statistics():
-    """Get statistics about user's tasks."""
-    current_user_id = get_jwt_identity()
-    
-    # Convert string ID back to integer if needed
-    if isinstance(current_user_id, str):
-        current_user_id = int(current_user_id)
-    
-    # Get total tasks
-    total_tasks = Task.query.filter_by(user_id=current_user_id).count()
-    
-    # Get tasks by status
-    status_counts = db.session.query(
-        Task.status, db.func.count(Task.id)
-    ).filter_by(user_id=current_user_id).group_by(Task.status).all()
-    
-    status_stats = {status: count for status, count in status_counts}
-    
-    # Get tasks by priority
-    priority_counts = db.session.query(
-        Task.priority, db.func.count(Task.id)
-    ).filter_by(user_id=current_user_id).group_by(Task.priority).all()
-    
-    priority_stats = {priority: count for priority, count in priority_counts}
-    
-    # Get tasks by tag
-    tag_counts = db.session.query(
-        Tag.name, db.func.count(Task.id)
-    ).join(Task.tags).filter(Task.user_id == current_user_id).group_by(Tag.name).all()
-    
-    tag_stats = {tag_name: count for tag_name, count in tag_counts}
-    
-    # Get overdue tasks
-    overdue_tasks = Task.query.filter(
-        Task.user_id == current_user_id,
-        Task.due_date < datetime.utcnow(),
-        Task.status != 'completed'
-    ).count()
-    
-    # Get upcoming tasks (due in the next 7 days)
-    upcoming_tasks = Task.query.filter(
-        Task.user_id == current_user_id,
-        Task.due_date >= datetime.utcnow(),
-        Task.due_date <= datetime.utcnow() + timedelta(days=7),
-        Task.status != 'completed'
-    ).count()
-    
-    return jsonify({
-        "total_tasks": total_tasks,
-        "by_status": status_stats,
-        "by_priority": priority_stats,
-        "by_tag": tag_stats,
-        "overdue_tasks": overdue_tasks,
-        "upcoming_tasks": upcoming_tasks
-    }), 200
-
-### File: C:\Users\rdjon\Downloads\task-management-api\app\resources\__init__.py
+### File: C:\Users\rdjon\task-management-api\app\resources\__init__.py
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\schemas\comment.py
+### File: C:\Users\rdjon\task-management-api\app\schemas\comment.py
 from marshmallow import Schema, fields, validate, ValidationError
 
 class CommentSchema(Schema):
@@ -3288,7 +3106,7 @@ class CommentSchema(Schema):
     # Add these fields for showing the username in comments
     username = fields.String(dump_only=True, attribute="user.username")
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\schemas\tag.py
+### File: C:\Users\rdjon\task-management-api\app\schemas\tag.py
 from marshmallow import Schema, fields, validate, ValidationError
 
 class TagSchema(Schema):
@@ -3302,7 +3120,7 @@ class TagReferenceSchema(Schema):
     """Schema for referencing tags in other schemas."""
     id = fields.Integer(required=True)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\schemas\task.py
+### File: C:\Users\rdjon\task-management-api\app\schemas\task.py
 from marshmallow import Schema, fields, validate, validates, ValidationError
 from datetime import datetime
 from app.schemas.tag import TagSchema
@@ -3351,7 +3169,7 @@ class TaskBulkUpdateSchema(Schema):
     task_ids = fields.List(fields.Integer(), required=True, validate=validate.Length(min=1))
     updates = fields.Dict(required=True)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\schemas\user.py
+### File: C:\Users\rdjon\task-management-api\app\schemas\user.py
 from marshmallow import Schema, fields, validate, ValidationError
 
 class UserRegistrationSchema(Schema):
@@ -3375,13 +3193,13 @@ class UserSchema(Schema):
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\schemas\__init__.py
+### File: C:\Users\rdjon\task-management-api\app\schemas\__init__.py
 from app.schemas.user import UserRegistrationSchema, UserLoginSchema, UserSchema
 from app.schemas.task import TaskSchema, TaskQuerySchema, TaskBulkDeleteSchema, TaskBulkUpdateSchema
 from app.schemas.tag import TagSchema, TagReferenceSchema
 from app.schemas.comment import CommentSchema
 
-# Initialize schemas
+# Initialise schemas
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 user_registration_schema = UserRegistrationSchema()
@@ -3400,7 +3218,7 @@ tag_reference_schema = TagReferenceSchema()
 comment_schema = CommentSchema()
 comments_schema = CommentSchema(many=True)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\activity_logger.py
+### File: C:\Users\rdjon\task-management-api\app\utils\activity_logger.py
 from functools import wraps
 from flask import request, g
 from flask_jwt_extended import get_jwt_identity
@@ -3498,7 +3316,7 @@ def get_comment_id_from_response(result, *args, **kwargs):
         pass
     return None
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\api_docs.py
+### File: C:\Users\rdjon\task-management-api\app\utils\api_docs.py
 from flask import Blueprint, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models.user import User
@@ -3645,7 +3463,7 @@ def get_user_api_docs():
     
     return jsonify(docs), 200
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\auth.py
+### File: C:\Users\rdjon\task-management-api\app\utils\auth.py
 from functools import wraps
 from flask import jsonify, request
 from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity
@@ -3748,7 +3566,7 @@ def owner_or_admin_required(model_class):
     
     return decorator
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\cleanup.py
+### File: C:\Users\rdjon\task-management-api\app\utils\cleanup.py
 from app import db
 from app.models.token_blacklist import TokenBlacklist
 from datetime import datetime, timezone
@@ -3779,14 +3597,14 @@ def cleanup_expired_tokens():
         db.session.rollback()
         return -1
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\db_init.py
+### File: C:\Users\rdjon\task-management-api\app\utils\db_init.py
 from app import db
 from app.models.user import User
 from app.models.task import Task
 from sqlalchemy import text
 
 def init_db():
-    """Initialize database with tables."""
+    """Initialise database with tables."""
     # Create tables
     db.create_all()
     print("Database tables created.")
@@ -3822,7 +3640,7 @@ def create_sample_data():
     tasks = [
         Task(
             title="Complete project setup",
-            description="Initialize the project structure and dependencies",
+            description="Initialise the project structure and dependencies",
             status="completed",
             priority="high",
             user_id=user.id
@@ -3856,7 +3674,7 @@ def create_sample_data():
     admin_tasks = [
         Task(
             title="Review security policies",
-            description="Ensure all endpoints have proper authorization",
+            description="Ensure all endpoints have proper authorisation",
             status="pending",
             priority="high",
             user_id=admin.id
@@ -3878,7 +3696,7 @@ def create_sample_data():
     print(f"Created {len(tasks)} tasks for regular user")
     print(f"Created {len(admin_tasks)} tasks for admin user")
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\email.py
+### File: C:\Users\rdjon\task-management-api\app\utils\email.py
 import os
 from flask import current_app, render_template_string
 from flask_mail import Mail, Message
@@ -3980,7 +3798,7 @@ The Task Manager Team
     
     send_email(subject, user.email, body, html_body)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\errors.py
+### File: C:\Users\rdjon\task-management-api\app\utils\errors.py
 ### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\errors.py
 from flask import jsonify
 from marshmallow import ValidationError
@@ -3994,7 +3812,7 @@ def register_error_handlers(app):
     
     @app.errorhandler(401)
     def unauthorized(e):
-        return jsonify({"error": "Unauthorized", "message": str(e)}), 401
+        return jsonify({"error": "Unauthorised", "message": str(e)}), 401
     
     @app.errorhandler(403)
     def forbidden(e):
@@ -4023,7 +3841,7 @@ def handle_exception(e):
     
     return jsonify({"error": "An error occurred", "message": str(e)}), 500
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\helpers.py
+### File: C:\Users\rdjon\task-management-api\app\utils\helpers.py
 from functools import wraps
 from flask import jsonify
 from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity
@@ -4042,7 +3860,7 @@ def admin_required(fn):
 
 # Additional helper functions will be added as needed
 
-### File: C:\Users\rdjon\Downloads\task-management-api\app\utils\__init__.py
+### File: C:\Users\rdjon\task-management-api\app\utils\__init__.py
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -4050,7 +3868,7 @@ from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 import os
 
-# Initialize extensions
+# Initialise extensions
 db = SQLAlchemy()
 migrate = Migrate()
 jwt = JWTManager()
@@ -4068,7 +3886,7 @@ def create_app(config_object='app.config.DevelopmentConfig'):
     app = Flask(__name__)
     app.config.from_object(config_object)
     
-    # Initialize extensions with app
+    # Initialise extensions with app
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
@@ -4109,7 +3927,7 @@ def create_app(config_object='app.config.DevelopmentConfig'):
     @jwt.unauthorized_loader
     def missing_token_callback(error):
         return jsonify({
-            'error': 'Authorization required',
+            'error': 'Authorisation required',
             'message': 'Token is missing'
         }), 401
     
@@ -4129,7 +3947,7 @@ def create_app(config_object='app.config.DevelopmentConfig'):
     
     return app
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\alembic.ini
+### File: C:\Users\rdjon\task-management-api\migrations\alembic.ini
 # A generic, single database configuration.
 
 [alembic]
@@ -4182,7 +4000,7 @@ format = %(levelname)-5.5s [%(name)s] %(message)s
 datefmt = %H:%M:%S
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\env.py
+### File: C:\Users\rdjon\task-management-api\migrations\env.py
 import logging
 from logging.config import fileConfig
 
@@ -4298,7 +4116,7 @@ else:
     run_migrations_online()
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\versions\59449644591f_add_tag_and_comment_models.py
+### File: C:\Users\rdjon\task-management-api\migrations\versions\59449644591f_add_tag_and_comment_models.py
 """Add tag and comment models
 
 Revision ID: 59449644591f
@@ -4357,7 +4175,7 @@ def downgrade():
     # ### end Alembic commands ###
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\versions\883ce3c7349f_add_role_field_to_user_model_and_create_.py
+### File: C:\Users\rdjon\task-management-api\migrations\versions\883ce3c7349f_add_role_field_to_user_model_and_create_.py
 """Add role field to User model and create TokenBlacklist model
 
 Revision ID: 883ce3c7349f
@@ -4404,7 +4222,7 @@ def downgrade():
     # ### end Alembic commands ###
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\versions\e5376396980d_add_password_reset_tokens_and_activity_.py
+### File: C:\Users\rdjon\task-management-api\migrations\versions\e5376396980d_add_password_reset_tokens_and_activity_.py
 """Add password reset tokens and activity logs
 
 Revision ID: e5376396980d
@@ -4473,7 +4291,7 @@ def downgrade():
     # ### end Alembic commands ###
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\migrations\versions\f70fa4f69e9d_initial_migration.py
+### File: C:\Users\rdjon\task-management-api\migrations\versions\f70fa4f69e9d_initial_migration.py
 """Initial migration
 
 Revision ID: f70fa4f69e9d
@@ -4546,7 +4364,7 @@ def downgrade():
     # ### end Alembic commands ###
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\index.html
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4614,7 +4432,7 @@ def downgrade():
                         <input type="color" id="new-tag-color" value="#3498db" title="Choose tag color">
                         <button id="add-tag-btn" class="btn btn-small">Add</button>
                     </div>
-                    <div class="help-text">Tags help organize your tasks</div>
+                    <div class="help-text">Tags help organise your tasks</div>
                 </div>
 
                 <div class="statistics">
@@ -4737,7 +4555,7 @@ def downgrade():
 </body>
 </html>
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\login.html
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\login.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4780,7 +4598,7 @@ def downgrade():
 </body>
 </html>
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\register.html
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\register.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4827,7 +4645,7 @@ def downgrade():
 </body>
 </html>
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\css\auth.css
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\css\auth.css
 /* Base styles */
 :root {
     --primary-color: #3498db;
@@ -4948,7 +4766,7 @@ h2 {
     display: none;
 }
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\css\style.css
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\css\style.css
 /* Base styles */
 :root {
     --primary-color: #3498db;
@@ -5643,7 +5461,7 @@ input.error, select.error, textarea.error {
     }
 }
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\api.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\api.js
 // API base URL - change this to your API endpoint
 const API_BASE_URL = 'http://localhost:5000/api/v1';
 
@@ -5948,7 +5766,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\auth.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\auth.js
 document.addEventListener('DOMContentLoaded', () => {
     // Session management
     let sessionWarningShown = false;
@@ -6131,7 +5949,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\comments.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\comments.js
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
     const commentModal = document.getElementById('comment-modal');
@@ -6300,12 +6118,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Initialize
+    // Initialise
     function init() {
         setupEventListeners();
     }
     
-    // Initialize the comments module
+    // Initialise the comments module
     init();
     
     // Export functions for use in other modules
@@ -6317,7 +6135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openCommentModal = openCommentModal;
 });
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\feedback.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\feedback.js
 // js/feedback.js
 const feedback = {
     // Show success message
@@ -6488,7 +6306,7 @@ const feedback = {
     }
 };
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\tags.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\tags.js
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
     const tagsList = document.getElementById('tags-list');
@@ -6617,13 +6435,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Initialize
+    // Initialise
     function init() {
         loadTags();
         setupEventListeners();
     }
     
-    // Initialize the tags module
+    // Initialise the tags module
     init();
     
     // Export functions for use in other modules
@@ -6632,7 +6450,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-### File: C:\Users\rdjon\Downloads\task-management-api\task-manager-frontend\js\tasks.js
+### File: C:\Users\rdjon\task-management-api\task-manager-frontend\js\tasks.js
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
     const tasksContainer = document.getElementById('tasks-container');
@@ -6669,7 +6487,7 @@ document.addEventListener('DOMContentLoaded', () => {
         per_page: 10
     };
     
-    // Initialize
+    // Initialise
     function init() {
         loadTasks();
         loadStatistics();
@@ -7164,11 +6982,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Initialize the tasks module
+    // Initialise the tasks module
     init();
 });
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\conftest.py
+### File: C:\Users\rdjon\task-management-api\tests\conftest.py
 import pytest
 from datetime import datetime, timedelta
 from app import create_app, db
@@ -7283,14 +7101,14 @@ def admin_auth_tokens(app, admin_user):
 def auth_headers(auth_tokens):
     """Create authentication headers for a regular user."""
     return {
-        "Authorization": f"Bearer {auth_tokens['access_token']}"
+        "Authorisation": f"Bearer {auth_tokens['access_token']}"
     }
 
 @pytest.fixture
 def admin_auth_headers(admin_auth_tokens):
     """Create authentication headers for an admin user."""
     return {
-        "Authorization": f"Bearer {admin_auth_tokens['access_token']}"
+        "Authorisation": f"Bearer {admin_auth_tokens['access_token']}"
     }
 
 @pytest.fixture
@@ -7417,10 +7235,10 @@ def json_content_headers():
         "Content-Type": "application/json"
     }
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\__init__.py
+### File: C:\Users\rdjon\task-management-api\tests\__init__.py
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_admin.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_admin.py
 import json
 import pytest
 
@@ -7685,7 +7503,7 @@ def test_admin_stats(client, app, regular_user, admin_user, test_tasks, admin_au
     assert response.status_code == 401
     assert json.loads(response.data)['error'] == 'Authorization required'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_auth.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_auth.py
 import json
 import pytest
 from datetime import datetime, timedelta
@@ -8012,7 +7830,7 @@ def test_update_me(client, app, regular_user, auth_headers, json_content_headers
     assert response.status_code == 409
     assert json.loads(response.data)['error'] == 'Email already taken'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_comments.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_comments.py
 import json
 import pytest
 
@@ -8272,7 +8090,7 @@ def test_delete_comment(client, app, regular_user, test_comments, auth_headers):
     assert response.status_code == 401
     assert json.loads(response.data)['error'] == 'Authorization required'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_export.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_export.py
 import json
 import pytest
 import csv
@@ -8387,7 +8205,7 @@ def test_export_invalid_format(client, auth_headers):
     assert response.status_code == 400
     assert json.loads(response.data)['error'] == 'Unsupported export format'
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_tags.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_tags.py
 import json
 import pytest
 
@@ -8742,7 +8560,7 @@ def test_task_tag_relationships(client, app, regular_user, test_tasks, test_tags
         tag = Tag.query.get(tag_id)
         assert tag not in task.tags
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\test_tasks.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\test_tasks.py
 import json
 import pytest
 from datetime import datetime, timedelta
@@ -9192,10 +9010,10 @@ def test_bulk_actions(client, app, regular_user, test_tasks, auth_headers, json_
     assert response.status_code == 400
     assert 'error' in json.loads(response.data)
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\integration\__init__.py
+### File: C:\Users\rdjon\task-management-api\tests\integration\__init__.py
 
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\unit\test_models.py
+### File: C:\Users\rdjon\task-management-api\tests\unit\test_models.py
 from datetime import datetime, timedelta
 from app.models.user import User
 from app.models.task import Task
@@ -9417,6 +9235,6 @@ def test_relationships(app, regular_user, test_tasks, test_tags, test_comments):
         assert task in tag.tasks
         assert tag in task.tags
 
-### File: C:\Users\rdjon\Downloads\task-management-api\tests\unit\__init__.py
+### File: C:\Users\rdjon\task-management-api\tests\unit\__init__.py
 
 

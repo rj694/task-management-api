@@ -44,7 +44,7 @@ def test_create_task(access_token):
     
     # Make sure the header format is exactly 'Bearer <token>' with a space
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -59,7 +59,7 @@ def test_create_task(access_token):
     
     print(f"Status code: {response.status_code}")
     if response.status_code == 401:
-        print("DEBUG: Authorization header sent:", headers["Authorization"])
+        print("DEBUG: Authorisation header sent:", headers["Authorisation"])
     pprint(response.json())
     
     return response.json()
@@ -69,7 +69,7 @@ def test_get_tasks(access_token):
     print("\nTesting get all tasks...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -85,7 +85,7 @@ def test_get_task(access_token, task_id):
     print(f"\nTesting get task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -101,7 +101,7 @@ def test_update_task(access_token, task_id):
     print(f"\nTesting update task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -122,7 +122,7 @@ def test_task_statistics(access_token):
     print("\nTesting task statistics...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     
@@ -138,7 +138,7 @@ def test_delete_task(access_token, task_id):
     print(f"\nTesting delete task {task_id}...")
     
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorisation": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     

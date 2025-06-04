@@ -9,7 +9,7 @@ def test_tag_operations(auth_token):
     print("=== Testing Tag Operations ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -63,7 +63,7 @@ def test_task_with_tags(auth_token, tag_id):
     print("\n=== Testing Tasks with Tags ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -116,7 +116,7 @@ def test_task_comments(auth_token, task_id):
     print("\n=== Testing Task Comments ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     
@@ -168,7 +168,7 @@ def test_task_export(auth_token):
     print("\n=== Testing Task Export ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}"
+        "Authorisation": f"Bearer {auth_token}"
     }
     
     # Export tasks as JSON
@@ -201,7 +201,7 @@ def test_rate_limiting(auth_token):
     print("\n=== Testing Rate Limiting ===")
     
     headers = {
-        "Authorization": f"Bearer {auth_token}",
+        "Authorisation": f"Bearer {auth_token}",
         "Content-Type": "application/json"
     }
     

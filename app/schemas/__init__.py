@@ -3,7 +3,7 @@ from app.schemas.task import TaskSchema, TaskQuerySchema, TaskBulkDeleteSchema, 
 from app.schemas.tag import TagSchema, TagReferenceSchema
 from app.schemas.comment import CommentSchema
 
-# Initialize schemas
+# Initialise schemas
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 user_registration_schema = UserRegistrationSchema()

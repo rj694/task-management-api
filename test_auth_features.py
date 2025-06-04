@@ -37,7 +37,7 @@ def test_register_login_logout():
     # Get user profile
     print("\n2. Getting user profile...")
     headers = {
-        "Authorization": f"Bearer {access_token}"
+        "Authorisation": f"Bearer {access_token}"
     }
     
     profile_response = requests.get(f"{BASE_URL}/auth/me", headers=headers)
@@ -59,7 +59,7 @@ def test_register_login_logout():
     # Try to refresh the token
     print("\n5. Trying to refresh the token...")
     refresh_headers = {
-        "Authorization": f"Bearer {refresh_token}"
+        "Authorisation": f"Bearer {refresh_token}"
     }
     refresh_response = requests.post(f"{BASE_URL}/auth/refresh", headers=refresh_headers)
     print(f"Status code: {refresh_response.status_code}")
@@ -84,7 +84,7 @@ def test_admin_endpoints(admin_email, admin_password):
     
     admin_token = login_response.json().get('access_token')
     admin_headers = {
-        "Authorization": f"Bearer {admin_token}"
+        "Authorisation": f"Bearer {admin_token}"
     }
     
     # Get all users (admin only)

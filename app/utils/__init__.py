@@ -5,7 +5,7 @@ from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 import os
 
-# Initialize extensions
+# Initialise extensions
 db = SQLAlchemy()
 migrate = Migrate()
 jwt = JWTManager()
@@ -23,7 +23,7 @@ def create_app(config_object='app.config.DevelopmentConfig'):
     app = Flask(__name__)
     app.config.from_object(config_object)
     
-    # Initialize extensions with app
+    # Initialise extensions with app
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
@@ -64,7 +64,7 @@ def create_app(config_object='app.config.DevelopmentConfig'):
     @jwt.unauthorized_loader
     def missing_token_callback(error):
         return jsonify({
-            'error': 'Authorization required',
+            'error': 'Authorisation required',
             'message': 'Token is missing'
         }), 401
     
